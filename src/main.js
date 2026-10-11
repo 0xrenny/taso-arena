@@ -166,7 +166,7 @@ function rankingScreen() {
       <thead><tr><th>#</th><th>Oyuncu</th><th>Sv</th><th>Puan</th><th></th></tr></thead>
       <tbody>${rows.map((r) => `<tr class="${r.isPlayer ? 'me' : ''}">
         <td class="rank">${medal(r.rank)}</td>
-        <td>${esc(r.name)}${r.isPlayer ? ' <small>(sen)</small>' : ''}</td>
+        <td>${esc(r.name)}${r.isPlayer && r.name !== 'Sen' ? ' <small>(sen)</small>' : ''}</td>
         <td>${r.level}</td><td><b>${r.points}</b></td>
         <td>${r.isPlayer ? '' : `<button class="btn tiny" data-act="challenge" data-bot="${r.id}">⚔️</button>`}</td>
       </tr>`).join('')}</tbody>
